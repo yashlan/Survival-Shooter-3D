@@ -13,6 +13,9 @@
 
  ## Gameplay
  tembak semua zombie jangan sampai menyentuh zombienya nanti jadi zombie. gunakan item health untuk menambah darah dan power up untuk memperkuat serangan.
+ 
+ ## Input
+ untuk gerak bisa gunakan W A S D atau arrow. untuk menembak klik kiri pada mouse kemudian tekan dan tahan, arahkan cursor ke enemy.
 
  ## How To Play
  Extract File Export Here.rar kemudian jalankan file .exe nya
