@@ -6,6 +6,7 @@ namespace Yashlan.enemy
 {
     public class EnemyMovement : MonoBehaviour
     {
+        public int speed;
         Transform player;
         PlayerHealth playerHealth;
         EnemyHealth enemyHealth;
@@ -15,12 +16,15 @@ namespace Yashlan.enemy
         void Awake()
         {
             //Cari game object dengan tag player
-            player = GameObject.FindGameObjectWithTag("Player").transform;
+            player = GameObject.FindWithTag("Player").transform;
 
             //Mendapatkan Reference component
             playerHealth = player.GetComponent<PlayerHealth>();
             enemyHealth = GetComponent<EnemyHealth>();
             nav = GetComponent<NavMeshAgent>();
+
+            //set speed 
+            nav.speed = speed;
         }
 
 

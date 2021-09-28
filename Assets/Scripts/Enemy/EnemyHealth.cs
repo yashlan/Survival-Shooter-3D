@@ -38,10 +38,8 @@ namespace Yashlan.enemy
         {
             //Check jika sinking
             if (isSinking)
-            {
                 //memindahkan object kebawah
                 transform.Translate(-Vector3.up * sinkSpeed * Time.deltaTime);
-            }
         }
 
 
@@ -71,6 +69,9 @@ namespace Yashlan.enemy
         {
             //set isdead
             isDead = true;
+
+            //tambah count kill
+            ScoreManager.Instance.IncerementKillCount();
 
             //SetCapcollider ke trigger
             capsuleCollider.isTrigger = true;

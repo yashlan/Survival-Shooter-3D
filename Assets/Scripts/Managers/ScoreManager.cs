@@ -1,22 +1,33 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine.UI;
+using Yashlan.util;
 
 namespace Yashlan.manage
 {
-    public class ScoreManager : MonoBehaviour
+    public class ScoreManager : Singleton<ScoreManager>
     {
         public static int score;
-        Text text;
+        public Text textScore;
+        public Text textKills;
+        public Text textPowerUp;
+        public int KillCount;
 
-        void Awake()
+        void Start()
         {
-            text = GetComponent<Text>();
             score = 0;
+            KillCount = 0;
+            textKills.text = $"Kills : {KillCount}";
+            textPowerUp.text = "Power Up : 0";
         }
 
-        void Update()
+        void Update() => textScore.text = $"Score: {score}";
+
+        public void IncerementKillCount() 
         {
-            text.text = "Score: " + score;
-        }
+            KillCount++;
+            textKills.text = $"Kills : {KillCount}";
+        } 
+
+        public void SetTextPowerUp(float time) => textPowerUp.text = $"Power Up : {(int)time}";
+
     }
 }

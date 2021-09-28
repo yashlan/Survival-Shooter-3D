@@ -19,7 +19,7 @@ namespace Yashlan.enemy
         void Awake()
         {
             //Mencari game object dengan tag "Player"
-            player = GameObject.FindGameObjectWithTag("Player");
+            player = GameObject.FindWithTag("Player");
 
             //mendapatkan komponen player health
             playerHealth = player.GetComponent<PlayerHealth>();

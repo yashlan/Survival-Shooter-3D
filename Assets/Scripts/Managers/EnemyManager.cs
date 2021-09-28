@@ -6,7 +6,7 @@ namespace Yashlan.manage
     public class EnemyManager : MonoBehaviour
     {
         public GameObject enemy;
-        public float spawnTime = 3f;
+        public float spawnTime;
         public Transform[] spawnPoints;
 
         private PlayerHealth playerHealth;
@@ -18,7 +18,7 @@ namespace Yashlan.manage
             factory = GetComponent<EnemyFactory>();
 
             //mencari component playerhealth pada gameObject yg ber-tag Player
-            playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+            playerHealth = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
 
             //Mengeksekusi fungs Spawn setiap beberapa detik sesui dengan nilai spawnTime
             InvokeRepeating(nameof(Spawn), spawnTime, spawnTime);
@@ -27,6 +27,18 @@ namespace Yashlan.manage
 
         private void Spawn()
         {
+            //mempercepat spawn time enemy
+            var kill = ScoreManager.Instance.KillCount;
+
+            if (kill >= 25)
+                spawnTime = 6;
+            if (kill >= 50)
+                spawnTime = 5;
+            if (kill >= 75)
+                spawnTime = 4;
+            if (kill >= 100)
+                spawnTime = 3;
+
             //Jika player telah mati maka tidak membuat enemy baru
             if (playerHealth.currentHealth <= 0f) return;
 
