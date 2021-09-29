@@ -4,6 +4,8 @@ using Yashlan.player;
 
 public class InputHandler : MonoBehaviour
 {
+    //can shoot buat handle demo command pattern, karna kita hanya menggerakkan cube
+    public bool canShoot = false;
     public PlayerMovement playerMovement;
     public PlayerShooting playerShooting;
 
@@ -24,11 +26,14 @@ public class InputHandler : MonoBehaviour
 
     void Update()
     {
-        //Mengahndle shoot
-        Command shootCommand = InputShootHandling();
-        if (shootCommand != null)
+        //Mengahandle shoot
+        if (canShoot)
         {
-            shootCommand.Execute();
+            Command shootCommand = InputShootHandling();
+            if (shootCommand != null)
+            {
+                shootCommand.Execute();
+            }
         }
     }
 

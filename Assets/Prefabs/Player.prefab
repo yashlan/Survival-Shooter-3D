@@ -67,6 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52756a3793d2cb64ab3b1a8da8e3facb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canShoot: 1
   playerMovement: {fileID: 857361659237489034}
   playerShooting: {fileID: 6550942997290452990}
 --- !u!114 &8078515406264958596
@@ -100,6 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ec45203ae7a1a54c9d02c355f983833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Debug: 0
   speed: 6
 --- !u!95 &8540572769540721659
 Animator:

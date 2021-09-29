@@ -4,6 +4,8 @@ namespace Yashlan.player
 {
     public class PlayerMovement : MonoBehaviour
     {
+        //debug untuk mode command pattern demo
+        public bool Debug = false;
         public float speed = 6f;
         Vector3 movement;
         Animator anim;
@@ -17,7 +19,7 @@ namespace Yashlan.player
             floorMask = LayerMask.GetMask("Floor");
 
             //Mendapatkan komponen Animator
-            anim = GetComponent<Animator>();
+            if(!Debug) anim = GetComponent<Animator>();
 
             //Mendapatkan komponen Rigidbody
             playerRigidbody = GetComponent<Rigidbody>();
@@ -33,7 +35,10 @@ namespace Yashlan.player
 
             Move(h, v);
             Turning();
-            Animating(h, v);
+
+            // jika mode debug maka anim tidak dijalankan. debug ini digunakan untuk mode command pattern demo
+            if(!Debug)
+                Animating(h, v);
         }
 
         //Method player dapat berjalan
@@ -75,7 +80,7 @@ namespace Yashlan.player
         public void Animating(float h, float v)
         {
             bool walking = h != 0f || v != 0f;
-            anim.SetBool("IsWalking", walking);
+            if(!Debug) anim.SetBool("IsWalking", walking);
         }
     }
 }
