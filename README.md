@@ -7,7 +7,7 @@
  ## Fitur Tambahan
  - Singleton Behaviour
  - random spawn item health dan power up
- - Item Health dan Power Up : Yang Merah Power Up (mempercepat speed, fire rate, memperbesar line renderer, damage) dan Yang Hijau Health +20
+ - Item Health dan Power Up : Yang Merah Power Up (mempercepat speed, fire rate, memperbesar line renderer, damage, memperpanjang range raycast) dan Yang Hijau Health +20
  - Floating text Info : Power Up atau Health + 20 dan total kills info
  - Decrease Spawn Time : semakin banyak kill, maka time spawn enemy akan menjadi lebih cepat
 
